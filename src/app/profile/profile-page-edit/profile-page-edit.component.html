@@ -1,0 +1,49 @@
+<div class="profile-edit">
+    <h1>Edit profile</h1>
+    <form [formGroup]="editProfile" (ngSubmit)="onSubmit()">
+        
+        <div class="item">
+            <label for="email">Email</label>
+            <input type="text" id="email" formControlName="email" [readOnly]="true">
+        
+        </div>
+        
+        <div class="item">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" formControlName="firstName">
+            <div class="alert" *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched || isSubmitted)">
+                <div *ngIf="firstName?.errors?.['required']"> First Name is required</div>
+                <div *ngIf="firstName?.errors?.['maxlength']"> First Name must be under 255 letters</div>
+            </div>
+        </div>
+        
+        <div class="item">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" formControlName="lastName">
+            <div class="alert" *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched || isSubmitted)">
+                <div *ngIf="lastName?.errors?.['required']"> Last Name is required</div>
+                <div *ngIf="lastName?.errors?.['maxlength']"> Last Name must be under 255 letters</div>
+            </div>
+        </div>
+        
+        <div class="item">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" formControlName="phoneNumber" appPhoneMask>
+            <div class="alert" *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched || isSubmitted)">
+                not valid
+                <div *ngIf="phoneNumber?.errors?.['required']"> Phone Number is required</div>
+                
+            </div>
+        </div>
+        
+        <div class="item">
+            <label for="websiteUrl">Website URL</label>
+            <input type="text" id="websiteUrl" formControlName="websiteUrl">
+            <div class="alert" *ngIf="websiteUrl?.invalid && (websiteUrl?.dirty || websiteUrl?.touched)">
+                Not Valid URL
+            </div>
+        </div>
+        
+        <button type="submit"> Submit</button>
+    </form>
+</div>
