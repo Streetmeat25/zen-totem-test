@@ -5,11 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProfilePageEditComponent } from './profile-page-edit/profile-page-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PhoneMaskDirective } from './phone-mask.directive';
+import { AuthGuard } from 'app/guard/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: ProfilePageComponent },
-  { path: 'edit', component: ProfilePageEditComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: '', component: ProfilePageComponent, canActivate:[AuthGuard] },
+  { path: 'edit', component: ProfilePageEditComponent, canActivate:[AuthGuard] },
+  { path: '**', redirectTo: '', pathMatch: 'full', canActivate:[AuthGuard] }
 ];
 
 @NgModule({

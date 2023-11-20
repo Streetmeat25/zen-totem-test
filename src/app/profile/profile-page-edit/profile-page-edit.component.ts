@@ -10,7 +10,7 @@ import { ProfileService } from 'shared';
 export class ProfilePageEditComponent implements OnInit {
   
 
- //можно реализовать через formBuilder 
+  //можно реализовать через formBuilder 
   editProfile: FormGroup = new FormGroup({
     'email': new FormControl(this.profileService.profile$.email),
     'firstName': new FormControl(this.profileService.profile$.firstName,[
