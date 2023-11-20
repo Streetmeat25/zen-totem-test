@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from 'shared';
 
 @Component({
   selector: 'app-profile-page',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-page.component.less']
 })
 export class ProfilePageComponent implements OnInit {
+  profileData= {
+    email: '',
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    websiteUrl: '',
+  };
 
-  constructor() { }
+  constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    this.profileData = this.profileService.profile$;
+    
   }
 
 }

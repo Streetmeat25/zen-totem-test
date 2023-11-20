@@ -30,7 +30,7 @@
             <label for="phoneNumber">Phone Number</label>
             <input type="text" id="phoneNumber" formControlName="phoneNumber" appPhoneMask>
             <div class="alert" *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched || isSubmitted)">
-                not valid
+                Not Valid
                 <div *ngIf="phoneNumber?.errors?.['required']"> Phone Number is required</div>
                 
             </div>

@@ -1,8 +1,16 @@
 <div class="header">
     <div class="profile" routerLink="/profile"> 
         <button type="button">Profile image</button>
-        <p> Mikhail Pavlov</p>
+        {{firstName}}
+        {{lastName}}
     </div>
-      
+    
+    <div class="update" *ngIf="alert?.isVisible && alert?.type == 'success'">
+        {{alert?.text}}
+    </div>
+    <div class="updateFailed" *ngIf="alert?.isVisible && alert?.type == 'error' ">
+        <div class="close" (click)="closeAlert()">X</div>
+        {{alert?.text}}
+    </div>
     <button type="button"> logout</button>
 </div>

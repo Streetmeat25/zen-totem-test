@@ -5,6 +5,7 @@ import { CoreModule } from 'core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { ProfileService } from 'shared/services/profile.service';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,7 @@ import { HeaderComponent } from './header/header.component';
         AppRoutingModule,
         CoreModule
     ],
-    providers: [],
+    providers: [ProfileService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
