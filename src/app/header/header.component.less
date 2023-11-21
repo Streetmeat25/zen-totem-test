@@ -1,15 +1,47 @@
 .header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid#8676b6;
+    background-color: #8676b62e ;
 }
 .profile{
     display: flex;
+    flex-basis: 20%;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.profile button {
+    color: #8676b6;
+    border: none;
+    height: 60px;
+    width: 60px;
+    border-radius: 25px;
+    cursor: pointer;
 }
 .update{
-    color: green;
     border: 1px solid green;
+    background-color: rgba(0, 128, 0, 0.268);
+    border-radius: 20px;
+    padding: 10px;
 }
 .updateFailed{
-    color: red;
     border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.238);
+    border-radius: 20px;
+    padding: 10px;
+}
+.close{
+    cursor: pointer;
+}
+.logout{
+    background-color: #8676b6;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.logout:hover{
+    background-color: #8676b665;
 }

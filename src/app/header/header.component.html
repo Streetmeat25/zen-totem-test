@@ -1,16 +1,16 @@
 <div class="header">
     <div class="profile" routerLink="/profile"> 
         <button type="button">Profile image</button>
-        {{firstName}}
-        {{lastName}}
+        <p>FirstName: {{firstName}}</p> 
+        <p>LastName: {{lastName}}</p>
     </div>
     
     <div class="update" *ngIf="alert?.isVisible && alert?.type == 'success'">
-        {{alert?.text}}
+        <p>{{alert?.text}}<p>
     </div>
     <div class="updateFailed" *ngIf="alert?.isVisible && alert?.type == 'error' ">
         <div class="close" (click)="closeAlert()">X</div>
-        {{alert?.text}}
+        <p>{{alert?.text}}</p>        
     </div>
-    <button type="button" (click)="logout()"> logout</button>
+    <button type="button" class="logout" (click)="logout()"> logout</button>
 </div>
