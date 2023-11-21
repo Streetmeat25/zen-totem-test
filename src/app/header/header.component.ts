@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'core/services';
 import { ProfileService } from 'shared';
 @Component({
@@ -17,11 +18,12 @@ export class HeaderComponent implements OnInit {
   firstName: string = '';
   lastName: string = '';
 
-  constructor( private profileService: ProfileService, private authService: AuthService ) {
+  constructor( private profileService: ProfileService, private authService: AuthService, private router: Router ) {
     this.profileService.getAlert.subscribe(alert => this.alert = alert)
   }
   logout(){
     this.authService.logout();
+    this.router.navigate(['login']);
   }
   closeAlert(){
     this.profileService.disableAlert();
